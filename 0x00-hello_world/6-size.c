@@ -5,7 +5,7 @@
  * Return: Always 0 (Success)
  */
 int main(void)
-{
+{i
 	printf("Size of a char : %d\n", sizeof(char));
 	printf("Size of a int : %d\n", sizeof(int));
 	printf("Size of a long int: %d\n", sizeof(long int));
