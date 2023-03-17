@@ -13,12 +13,12 @@ int main(void)
 		{
 			for (c = 50; c < 58; c++)
 			{
-				if (a > b && c > a)
+				if (c > b && b > a)
 				{
 					putchar(a);
 					putchar(b);
 					putchar(c);
-					if (a < 56)
+					if (a != 55 || b != 56)
 					{
 						putchar(',');
 						putchar(' ');
