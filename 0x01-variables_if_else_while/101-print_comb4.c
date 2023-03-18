@@ -5,27 +5,34 @@
  */
 int main(void)
 {
-	int a, b, c;
+	int a = 48;
+	int b;
+	int c;
 
-	for (a = 48; a < 58; a++)
+	while (a <= 55)
 	{
-		for (b = 49; b < 58; b++)
+		b = 49;
+		while (b <= 56)
 		{
-			for (c = 50; c < 58; c++)
+			c = 50;
+			while (c <= 57)
 			{
 				if (c > b && b > a)
 				{
 					putchar(a);
 					putchar(b);
 					putchar(c);
-					if (a != 55 || b != 56)
+					if (a < 55)
 					{
 						putchar(',');
 						putchar(' ');
 					}
 				}
+				c++;
 			}
+			b++;
 		}
+		a++;
 	}
 	putchar('\n');
 	return (0);
