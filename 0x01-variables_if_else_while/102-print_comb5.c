@@ -5,11 +5,13 @@
  */
 int main(void)
 {
-	int a, b;
+	int a = 0;
+	int b;
 
-	for (a = 0; a < 100; a++)
+	while (a <= 98)
 	{
-		for (b = 0; b < 100; b++)
+		b = 1;
+		while (b <= 99)
 		{
 			if (a < b)
 			{
@@ -18,14 +20,15 @@ int main(void)
 				putchar(' ');
 				putchar((b / 10) + 48);
 				putchar((b % 10) + 48);
-				if (a != 98 || b != 99)
+				if (a < 98)
 				{
 					putchar(',');
 					putchar(' ');
 				}
 			}
-
+			b++;
 		}
+		a++;
 	}
 	putchar('\n');
 	return (0);
