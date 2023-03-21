@@ -6,11 +6,11 @@
 * @n: the int to check
 * Return: the absolute value of int
 */
-int _abs(int c)
+int _abs(int n)
 {
-	if (c >= 0)
+	if (n >= 0)
 	{
-		return (c);
+		return (n);
 	}
-	return (-c);
+	return (-n);
 }
