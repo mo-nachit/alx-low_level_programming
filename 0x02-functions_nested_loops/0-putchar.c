@@ -1,3 +1,4 @@
+#include "main.h"
 #include <stdio.h>
 #include <string.h>
 /**
@@ -6,11 +7,14 @@
  */
 int main(void)
 {
-	char s[] = "_putchar";
-
-	for (int i = 0; i < strlen(s) ; i++)
-	{
-		putchar(s[i]);
-	}
+	putchar('_');
+	putchar('p');
+	putchar('u');
+	putchar('t');
+	putchar('c');
+	putchar('h');
+	putchar('a');
+	putchar('r');
+	putchar('\n');
 	return (0);
 }
