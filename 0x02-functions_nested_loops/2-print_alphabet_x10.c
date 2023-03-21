@@ -4,14 +4,15 @@
 */
 void print_alphabet(void)
 {
-	char a;
+	char a = 97;
 	int i = 0;
 
 	while (i <= 10)
 	{
-		for (a = 97 ; a <= 122; a++)
+		while(a <= 122)
 		{
 			_putchar(a);
+			a++;
 		}
 		_putchar('\n');
 		i++;
