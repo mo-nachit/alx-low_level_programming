@@ -8,15 +8,16 @@
  */
 int main(int argc, char *argv[])
 {
+	int r = 0;
+	int i;
+	int j;
+
 	if (argc == 1)
 	{
 		printf("%i\n", 0);
 		return (1);
 	}
-	int arg1 = 0;
-	int  j;
-
-	for (int i = 1; i < argc; i++)
+	for (i = 1; i < argc; i++)
 	{
 		for (j = 0; argv[i][j]; j++)
 		{
@@ -26,8 +27,8 @@ int main(int argc, char *argv[])
 				return (1);
 			}
 		}
-		arg1 += atoi(argv[i]);
+	       r += atoi(argv[i]);
 	}
-	printf("%d\n", arg1);
+	printf("%d\n", r);
 	return (0);
 }
