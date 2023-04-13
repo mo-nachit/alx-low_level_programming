@@ -2,60 +2,42 @@
 #include <stdlib.h>
 
 /**
-* _strlen - finds the length of string
-* @str: string
-*
-* Return: length of the string
-*/
-
-int _strlen(char *str)
-{
-	int len = 1;
-
-	while (str[len] != '\0')
-		len++;
-
-	return (len);
-}
-
-/**
-* string_nconcat - concatenates two strings only n bytes of s2
-* @s1: first string
-* @s2: second string
-* @n: number of bytes specified
-*
-* Return: NULL if fail, else pointer to malloc memory
-*/
-
+ * string_nconcat - concatenates two strings
+ * @s1: first string
+ * @s2: second string
+ * @n: number of bytes of s2 to concatenate
+ *
+ * Return: pointer to concatenated string
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *ptr;
-	unsigned int len1, len2, i, j;
+	char *result;
+	unsigned int i, j, s1_len, s2_len;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
+	/* if s1 or s2 is NULL, treat it as an empty string */
+	s1 == NULL ? s1 = "" : s1;
+	s2 == NULL ? s2 = "" : s2;
 
-	len1 = _strlen(s1);
-	len2 = _strlen(s2);
+	/* find length of s1 and s2 */
+	for (s1_len = 0; s1[s1_len]; s1_len++)
+		;
+	for (s2_len = 0; s2[s2_len]; s2_len++)
+		;
 
-	if (n >= len2)
-		n = len2;
+	/* if n is greater than or equal to the length of s2, use the entire s2 */
+	n >= s2_len ? n = s2_len : n;
 
-	ptr = malloc(len1 + n + 1);
-
-	if (ptr == NULL)
+	/* allocate memory for concatenated string */
+	result = malloc(sizeof(char) * (s1_len + n + 1));
+	if (result == NULL)
 		return (NULL);
 
-	for (i = 0, j = 0; i < (len1 + n); i++)
-	{
-		if (i < len1)
-			ptr[i] = s1[i];
-		else
-			ptr[i] = s2[j++];
+	/* add s1 and s2 to s */
+	for (i = 0; i < s1_len; i++)
+		result[i] = s1[i];
+	for (j = 0; j < n; j++)
+		result[i + j] = s2[j];
 
-	}
-	ptr[i] = '\0';
-	return (ptr);
+	result[i + j] = '\0';
+	return (result);
 }
