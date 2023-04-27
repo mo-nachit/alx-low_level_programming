@@ -1,12 +1,10 @@
-#include "lists.h"
-
-void first(void) __attribute__ ((constructor));
+#include <stdio.h>
 
 /**
- * first - befor main
+ * premain - prints a string before the main function is executed
  */
-
-void first(void)
+__attribute__ ((constructor))
+void premain(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
 	printf("I bore my house upon my back!\n");
